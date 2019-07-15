@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+  <meta name="description" content="Formulario validado a tiempo real con Vanilla JS">
+  <meta name="keywords" content="HTML,CSS,JavaScript, Vanilla JS">
+  <meta name="author" content="Josep Conesa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario validado en tiempo real con Vanilla JS by Josep Conesa</title>
+<script type="text/javascript" src="valida.js"></script>
+
+<style type="text/css">
+html{
+	font-size:16px;
+}
+	#info{
+		width:350px;
+		height: 200px;
+		background-color:#DDDCDC;
+		font-size:2rem;
+	}
+</style>
+
+</head>
+<body>
+
+<form action="envio.php" method="post" name="contacto" onsubmit="return valida_envia();">
+<fieldset>
+<legend>Formulario de contacto inicial</legend>
+
+<label  for="usuario" >Usuario:</label><br/>
+ <input type="text" name="usuario" onkeyup="pasaValor('usuario');" /><br><br>
+
+ <label  for="telefono" >Telèfon:</label><br/>
+ 
+ <input type="text" name="telefono" onkeyup="pasaValor('telefono');" /><br><br>
+ <label for="fecha_dia">Fecha de nacimiento</label><br>
+ <input type="text" id="fecha_dia" name="fecha_dia" onkeyup="pasaValor('fecha_dia');"  placeholder="10"/>
+  de
+  <input type="text" id="fecha_mes" name="fecha_mes" onkeyup="pasaValor('fecha_mes');" placeholder="10"/>
+  de
+   <input type="text" id="fecha_anyo" name="fecha_anyo" onkeyup="pasaValor('fecha_anyo');" placeholder="1990"/><br><br>
+
+ <label  for="correu" >email:</label><br> 
+ <input type="text" name="correu" id="correu" onkeyup="pasaValor('correu');" /><br><br>
+<label  for="dni" >DNI:</label></br>
+ <input type="text" name="dni" id="dni" onkeyup="pasaValor('dni');" /><br><br>
+ Acepto las condiciones del servicio 
+ <input name="acepto" type="checkbox" value="acepto" onclick="pasaValor('acepto');"/><br><br>
+
+ <input name="registrate" type="submit" value="Regístrate" />
+ 
+ <input name="Borrar" type="button" value="Borrar el formulario"  onclick="avisoReset();"/><!--type="reset">-->
+ <input name="Guardar" type="button" value="Guardar datos" onclick="guardarDatos();"/>
+ <input name="Recuperar" type="button" value="Recuperar datos" onclick="obtenerDatos();"/><br><br>
+ <textarea disabled id="info" ></textarea>
+ 
+</fieldset>
+</form>
+</div>
+</body>
+</html>
